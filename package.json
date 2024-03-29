@@ -62,7 +62,6 @@
     "public/build",
     "package.json",
     "package-lock.json",
-    ".eslintrc.cjs",
     ".vercel",
     ".cache"
   ],
