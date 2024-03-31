@@ -1,0 +1,28 @@
+name: PR check workflows
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18, 20]
+    name: Node ${{ matrix.node }} sample 
+
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node }}
+        cache: 'npm'
+    - name: Install dependencies
+      run: pnpm install
+    - name: lint check
+      run: pnpm lint
+    - name: prettier check
+      run: pnpm prettier:list
+    - name: type check
+      run: pnpm tsc
+    - name: build check
+      run: pnpm build

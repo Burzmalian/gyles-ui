@@ -5,7 +5,7 @@ TODO:
 - npm publish
 - chromatic
 - vp tests
-- a11y tests
+- cli a11y tests
 - unit/interaction tests?
 - //theming setup
 - docs?
