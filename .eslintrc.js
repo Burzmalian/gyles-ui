@@ -1,8 +1,14 @@
 /** @type {import('eslint').Linter.Config} */
 module.exports = {
-  extends: ['standard-with-typescript', 'plugin:react/recommended', 'plugin:prettier/recommended'],
+  extends: [
+    'standard-with-typescript',
+    'plugin:react/recommended',
+    'plugin:prettier/recommended',
+    'plugin:react/jsx-runtime',
+  ],
   plugins: ['react', 'prettier'],
   rules: {
+    '@typescript-eslint/strict-boolean-expressions': 0,
     'prettier/prettier': [
       'error',
       {
