@@ -1,5 +1,6 @@
 import React from 'react';
-import { Preview } from '@storybook/react';
+import { Preview, ReactRenderer } from '@storybook/react';
+import { withThemeByClassName } from '@storybook/addon-themes';
 import './globals.css';
 
 const preview: Preview = {
@@ -13,7 +14,15 @@ const preview: Preview = {
     },
     layout: 'fullscreen',
   },
-  decorators: [Story => <Story />],
+  decorators: [
+    withThemeByClassName<ReactRenderer>({
+     themes: {
+       light: '',
+       dark: 'dark',
+       },
+      defaultTheme: 'light',
+     }),
+   ]
 };
 
 export default preview;

@@ -1,15 +1,22 @@
 TODO:
 
-//linting //typescript lint-staging github actions rollup/build npm publish chromatic vp tests a11y tests
-unit/interaction tests? theming setup //tailwind
+- github actions
+- rollup/build
+- npm publish
+- chromatic
+- vp tests
+- a11y tests
+- unit/interaction tests?
+- //theming setup
+- docs?
 
 core
 
-- button
-- link
+- //button
+- //link
 - dropdown
 - modal
-- input
+- //input
 - combobox
 - tooltip
 - theme
