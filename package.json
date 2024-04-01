@@ -1,13 +1,26 @@
 {
   "name": "gyles-ui",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "keywords": [],
-  "author": "",
+  "private": "true",
+  "author": "Gyles Fohl",
   "license": "ISC",
+  "description": "",
+  "main": "./dist/index.umd.js",
+  "module": "./dist/index.es.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.umd.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc && vite build",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "tsc": "tsc --skipLibCheck --noEmit",
@@ -23,7 +36,9 @@
     "@headlessui/react": "^2.0.0-alpha.4",
     "@headlessui/tailwindcss": "^0.2.0",
     "@heroicons/react": "^2.1.3",
-    "clsx": "^2.1.0"
+    "clsx": "^2.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.2.25",
@@ -37,7 +52,11 @@
     "@storybook/react-vite": "^8.0.5",
     "@storybook/test": "^8.0.5",
     "@tailwindcss/forms": "^0.5.7",
+    "@types/node": "^20.12.2",
+    "@types/react": "^18.2.73",
+    "@types/react-dom": "^18.2.23",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@vitejs/plugin-react-swc": "^3.6.0",
     "autoprefixer": "^10.4.19",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
@@ -55,7 +74,9 @@
     "prop-types": "^15.8.1",
     "storybook": "^8.0.5",
     "tailwindcss": "^3.4.3",
-    "typescript": "^5.4.3"
+    "typescript": "^5.4.3",
+    "vite": "^5.2.7",
+    "vite-plugin-dts": "^3.8.1"
   },
   "eslintIgnore": [
     "node_modules",
@@ -63,18 +84,12 @@
     "public/build",
     "package.json",
     "package-lock.json",
+    "vite.config.js",
+    ".eslintrc.js",
+    "tailwind.config.ts",
+    "lint-staged.config.js",
+    "dist",
     ".vercel",
     ".cache"
-  ],
-  "prettier": {
-    "arrowParens": "avoid",
-    "bracketSpacing": true,
-    "printWidth": 120,
-    "proseWrap": "always",
-    "semi": true,
-    "singleQuote": true,
-    "tabWidth": 2,
-    "trailingComma": "all",
-    "useTabs": false
-  }
+  ]
 }

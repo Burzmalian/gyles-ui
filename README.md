@@ -1,14 +1,17 @@
 TODO:
 
-- github actions
-- rollup/build
+- //github actions
+- vite/build
 - npm publish
+- //theming setup
+- docs?
+
+later
+
 - chromatic
 - vp tests
 - cli a11y tests
 - unit/interaction tests?
-- //theming setup
-- docs?
 
 core
 
