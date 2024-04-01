@@ -27,7 +27,7 @@
     "prettier": "prettier \"**/*.+(js|json|ts|tsx|cjs)\"",
     "prettier:list": "npm run prettier -- --list-different",
     "prettier:fix": "npm run prettier -- --write",
-    "lint": "eslint .",
+    "lint": "eslint src/**",
     "lint:fix": "npm run lint -- --fix",
     "prepare": "husky install",
     "pre-commit": "lint-staged"
