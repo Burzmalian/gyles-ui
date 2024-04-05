@@ -29,6 +29,7 @@ jobs:
         registry-url: 'https://registry.npmjs.org'
     - name: npm release setup
       run: npm version ${{ github.event.inputs.version }} --no-commit-hooks --no-git-tag-version
+    - name: set var
       run: echo "::set-output new=NEW_PACKAGE_VERSION::v$(grep '"version:' package.json' | cut -d '"' -f 4 | head -n 1)""
       id: new-package-version
     - name: Install dependencies
@@ -52,8 +53,9 @@ jobs:
       run: gh release create ${{ steps.new-package-version.outputs.NEW_PACKAGE_VERSION }} --draft --title ${{ steps.new-package-version.outputs.NEW_PACKAGE_VERSION }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    - name: publish
+    - name: ci
       run: npm ci
+    - name: publish
       run: npm publish
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
