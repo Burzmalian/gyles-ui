@@ -1,6 +1,9 @@
-name: PR check workflows
+name: Prelease to NPM
 
-on: push
+on:
+  push:
+    tags:
+      - 'v[0-9]+.[0-9]+.[0-9]+-alpha[0-9]+'
 
 jobs:
   build:
@@ -24,5 +27,9 @@ jobs:
       run: npm run prettier:list
     - name: type check
       run: npm run tsc
-    - name: build
-      run: npm run build
+    - name: publish
+      - run: npm ci
+      - run: npm test
+      - uses: JS-DevTools/npm-publish@v3
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
