@@ -27,9 +27,6 @@ export default defineConfig({
         preserveModules: true,
         format: 'es',
         inlineDynamicImports: false,
-        entryFileNames: ({ name: fileName }) => {
-          return `${fileName}.js`;
-        },
       },
     },
     sourcemap: true,
