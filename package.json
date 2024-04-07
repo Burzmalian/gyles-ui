@@ -5,14 +5,14 @@
   "license": "ISC",
   "description": "",
   "type": "module",
-  "module": "./dist/index.es.js",
+  "module": "./dist/src/index.js",
   "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
   "exports": {
     ".": {
-      "import": "./dist/index.es.js",
+      "import": "./dist/src/index.es.js",
       "types": "./dist/index.d.ts"
     }
   },
