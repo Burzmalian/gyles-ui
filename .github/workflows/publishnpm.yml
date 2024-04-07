@@ -31,7 +31,7 @@ jobs:
       run: npm version ${{ github.event.inputs.version }} --no-commit-hooks --no-git-tag-version
     - name: set var
       run: 
-        echo "NEW_PACKAGE_VERSION=v$(grep '"version:"' package.json' | cut -d '"' -f 4 | head -n 1)" >> $GITHUB_OUTPUT
+        echo "NEW_PACKAGE_VERSION=v$(grep '"version:"' package.json | cut -d '"' -f 4 | head -n 1)" >> $GITHUB_OUTPUT
       id: new-package-version
     - name: Install dependencies
       run: npm install
