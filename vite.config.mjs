@@ -11,7 +11,6 @@ export default defineConfig({
       entry: resolve(__dirname, './src/index.ts'),
       name: 'gyles-ui',
       fileName: format => `index.${format}.js`,
-      formats: ['es'],
     },
     rollupOptions: {
       external: ['react', 'react-dom', 'react/jsx-runtime', 'tailwindcss', '@heroicons/react', '@headlessui/react'],
