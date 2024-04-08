@@ -13,12 +13,19 @@ export default defineConfig({
       formats: ['es'],
     },
     rollupOptions: {
-      external: ['react', 'react-dom', 'react/jsx-runtime', 'tailwindcss', '@headlessui/react', 'clsx'],
+      external: [
+        'react',
+        'react-dom',
+        'react/jsx-runtime',
+        'tailwindcss',
+        '@headlessui/react',
+        'clsx',
+        '@heroicons/react',
+      ],
       output: {
         preserveModules: true,
         preserveModulesRoot: 'src',
         format: 'es',
-        inlineDynamicImports: false,
         entryFileNames: '[name].js',
       },
     },
