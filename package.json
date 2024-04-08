@@ -1,6 +1,6 @@
 {
   "name": "gyles-ui",
-  "version": "1.0.9",
+  "version": "1.0.8",
   "author": "Gyles Fohl",
   "license": "ISC",
   "description": "",
@@ -10,6 +10,12 @@
   "files": [
     "dist"
   ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc && vite build",
