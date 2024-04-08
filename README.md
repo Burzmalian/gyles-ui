@@ -2,10 +2,11 @@ TODO:
 
 - //github actions
 - //vite/build
-- npm publish
+- //npm publish
 - //storyrbook theming setup
 - css theming with vars
 - docs?
+- publish storybook publicly
 
 later
 

@@ -25,13 +25,11 @@ export default defineConfig({
         'clsx',
         '@heroicons/react',
       ],
+      // We are using a glob to create entry points for every component
+      // https://rollupjs.org/configuration-options/#input
       input: Object.fromEntries(
         globSync('src/**/*.{ts,tsx}', { ignore: 'src/**/*.stories.tsx' }).map(file => [
-          // This remove `src/` as well as the file extension from each
-          // file, so e.g. src/nested/foo.js becomes nested/foo
           path.relative('src', file.slice(0, file.length - path.extname(file).length)),
-          // This expands the relative paths to absolute paths, so e.g.
-          // src/nested/foo becomes /project/src/nested/foo.js
           fileURLToPath(new URL(file, import.meta.url)),
         ]),
       ),
