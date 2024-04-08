@@ -5,6 +5,7 @@
   "license": "ISC",
   "description": "",
   "type": "module",
+  "sideEffects": false,
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
