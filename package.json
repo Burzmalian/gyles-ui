@@ -1,13 +1,15 @@
 {
   "name": "gyles-ui",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "author": "Gyles Fohl",
   "license": "ISC",
   "description": "",
   "type": "module",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "exports": {
     ".": {
       "import": "./dist/index.js",
